@@ -1,0 +1,48 @@
+@theme {
+
+  /* COLORS */
+
+  --color-primary: #005c55;
+  --color-primary-light: #0f766e;
+
+  --color-secondary: #565e74;
+
+  --color-accent: #F59E0B;
+
+  --color-background: #F8FAFC;
+
+  --color-surface: #FFFFFF;
+
+  --color-surface-muted: #F1F4F3;
+
+  --color-border: #CBD5E1;
+
+  /* TEXT */
+
+  --color-text: #181C1C;
+
+  --color-text-muted: #64748B;
+
+  /* FONTS */
+
+  --font-display: "Space Grotesk", sans-serif;
+
+  --font-body: "DM Sans", sans-serif;
+
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* SHADOWS */
+
+  --shadow-neo: 4px 4px 0px rgba(15,23,42,1);
+
+  --shadow-neo-sm: 2px 2px 0px rgba(15,23,42,1);
+
+  /* LAYOUT */
+
+  --spacing-page: 2rem;
+
+  --spacing-section: 6rem;
+
+  --radius-card: 0px;
+
+}
