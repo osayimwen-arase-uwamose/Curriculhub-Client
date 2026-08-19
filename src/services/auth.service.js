@@ -11,10 +11,12 @@ const authService = {
     const response =
       await loginRequest(credentials);
 
+    console.log('loginresponse:', response);
+
     const {
       accessToken,
       user,
-    } = response;
+    } = response.data;
 
     if (!accessToken) {
       throw new Error(
