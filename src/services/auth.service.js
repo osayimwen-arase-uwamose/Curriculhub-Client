@@ -14,7 +14,7 @@ const authService = {
     const {
       accessToken,
       user,
-    } = response;
+    } = response?.data;
 
     if (!accessToken) {
       throw new Error(
