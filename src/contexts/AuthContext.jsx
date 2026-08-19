@@ -58,19 +58,19 @@ export function AuthProvider({ children }) {
       }
 
       try {
-        const data = await refresh();
+        const response = await refresh();
 
-        if (data.accessToken) {
+        if (response.data.accessToken) {
           tokenService.setAccessToken(
-            data.accessToken
+            response.data.accessToken
           );
 
           setAccessTokenState(
-            data.accessToken
+            response.data.accessToken
           );
 
-          if (data.user) {
-            setUser(data.user);
+          if (response.data.user) {
+            setUser(response.data.user);
           }
         }
       } catch {

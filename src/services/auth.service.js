@@ -11,8 +11,6 @@ const authService = {
     const response =
       await loginRequest(credentials);
 
-    console.log('loginresponse:', response);
-
     const {
       accessToken,
       user,

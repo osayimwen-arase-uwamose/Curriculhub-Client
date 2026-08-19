@@ -5,9 +5,9 @@ const useRefreshToken = () => {
   const { setAccessToken } = useAuth();
 
   return async () => {
-    const data = await refreshRequest();
+    const response = await refreshRequest();
 
-    const newAccessToken = data.accessToken;
+    const newAccessToken = response.data.accessToken;
 
     setAccessToken(newAccessToken);
 
