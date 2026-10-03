@@ -1,23 +1,53 @@
-@utility shadow-neo{
-
-    box-shadow:4px 4px 0px rgba(15,23,42,1);
-
+@utility shadow-neo {
+  box-shadow: 4px 4px 0px rgba(15, 23, 42, 1);
 }
 
-@utility shadow-neo-sm{
-
-    box-shadow:2px 2px 0px rgba(15,23,42,1);
-
+@utility shadow-neo-sm {
+  box-shadow: 2px 2px 0px rgba(15, 23, 42, 1);
 }
 
-@utility bg-grid{
+@utility bg-grid {
+  background-size: 40px 40px;
 
-    background-size:40px 40px;
+  background-image:
+    linear-gradient(
+      to right,
+      #CBD5E1 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      #CBD5E1 1px,
+      transparent 1px
+    );
+}
 
-    background-image:
+@utility text-mono-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-label);
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
 
-        linear-gradient(to right,#CBD5E1 1px,transparent 1px),
+@utility text-mono-tiny {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-tiny);
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+}
 
-        linear-gradient(to bottom,#CBD5E1 1px,transparent 1px);
+@utility neo-hover {
+  transition:
+    transform 100ms ease,
+    box-shadow 100ms ease;
 
+  &:hover {
+    box-shadow: 2px 2px 0px rgba(15, 23, 42, 1);
+    transform: translate(2px, 2px);
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translate(4px, 4px);
+  }
 }

@@ -4,17 +4,802 @@
 
 @import "./utilities.css";
 
+
 html {
-
-    scroll-behavior:smooth;
-
+  scroll-behavior: smooth;
 }
 
-body{
 
+body {
+  @apply
+    bg-background
+    text-text
+    font-body;
+}
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   COMPONENT PRIMITIVES
+   ========================================================= */
+
+@layer components {
+
+  /* ---------------------------------------------------------
+     Card
+     --------------------------------------------------------- */
+
+  .card {
     @apply
-        bg-background
-        text-text
-        font-body;
+      border
+      border-grid-line
+      bg-surface
+      shadow-neo;
+  }
+
+
+  /* ---------------------------------------------------------
+     Page / Section
+     --------------------------------------------------------- */
+
+  .page-container {
+    @apply
+      mx-auto
+      w-full
+      max-w-7xl
+      px-8;
+  }
+
+  .section {
+    @apply
+      w-full
+      px-8
+      py-24;
+  }
+
+  .section-title {
+    @apply
+      font-display
+      text-4xl
+      font-bold;
+  }
+
+
+  /* ---------------------------------------------------------
+     Typography
+     --------------------------------------------------------- */
+
+  .heading-display {
+    @apply
+      font-display
+      text-display-xl
+      font-bold
+      tracking-tight;
+  }
+
+  .heading-lg {
+    @apply
+      font-display
+      text-headline-lg
+      font-bold
+      tracking-tight;
+  }
+
+  .heading-sm {
+    @apply
+      font-display
+      text-headline-sm
+      font-bold;
+  }
+
+  .body-lg {
+    @apply
+      font-body
+      text-body-lg;
+  }
+
+  .body-md {
+    @apply
+      font-body
+      text-body-md;
+  }
+
+
+  /* ---------------------------------------------------------
+     Form primitives
+     --------------------------------------------------------- */
+
+  .field-label {
+    @apply
+      block
+      font-mono
+      text-[13px]
+      font-medium
+      uppercase
+      tracking-wide
+      text-text;
+  }
+
+  .input {
+    @apply
+      w-full
+      rounded-none
+      border
+      border-grid-line
+      bg-surface
+      px-3
+      py-3
+      font-body
+      text-body-md
+      text-on-background
+      outline-none
+      transition-all
+
+      focus:border-primary
+      focus:ring-1
+      focus:ring-primary;
+  }
+
+  .input-icon {
+    @apply
+      pl-10;
+  }
+
+  .input-icon-right {
+    @apply
+      pr-12;
+  }
+
+  .field-error {
+    @apply
+      text-sm
+      font-medium
+      text-error;
+  }
+
+
+  /* ---------------------------------------------------------
+     Neo-brutalist interactive element
+     --------------------------------------------------------- */
+
+  .neo-button {
+    @apply
+      border
+      border-on-background
+      shadow-neo
+      transition-all;
+  }
+
+  .neo-button:hover {
+    @apply
+      shadow-neo-sm;
+
+    transform: translate(2px, 2px);
+  }
+
+  .neo-button:active {
+    @apply
+      shadow-none;
+
+    transform: translate(4px, 4px);
+  }
+
+
+  /* ---------------------------------------------------------
+     Dashboard
+     --------------------------------------------------------- */
+
+  .dashboard-shell {
+    @apply
+      min-h-screen
+      flex
+      flex-col
+      bg-background
+      text-on-background
+      font-body;
+  }
+
+  .dashboard-main {
+    @apply
+      flex
+      min-h-screen
+      flex-1
+      flex-col
+      md:ml-64;
+  }
+
+  .dashboard-content {
+    @apply
+      flex-1
+      p-8;
+  }
+
+  .dashboard-container {
+    @apply
+      mx-auto
+      w-full
+      max-w-7xl;
+  }
+
+
+  /* ---------------------------------------------------------
+     Dashboard Sidebar
+     --------------------------------------------------------- */
+
+  .dashboard-sidebar {
+    @apply
+      fixed
+      left-0
+      top-0
+      z-40
+      hidden
+      h-screen
+      w-64
+      flex-col
+      border-r
+      border-grid-line
+      bg-surface-container-lowest
+      md:flex;
+  }
+
+  .dashboard-sidebar-header {
+    @apply
+      border-b
+      border-grid-line
+      bg-background
+      p-6;
+  }
+
+  .dashboard-logo {
+    @apply
+      mb-4
+      flex
+      h-10
+      w-10
+      items-center
+      justify-center
+      border-2
+      border-on-background
+      bg-primary
+      text-xl
+      font-bold
+      text-on-primary
+      shadow-neo-sm;
+  }
+
+  .dashboard-sidebar-nav {
+    @apply
+      flex-1
+      space-y-2
+      overflow-y-auto
+      px-4
+      py-4;
+  }
+
+  .dashboard-nav-item {
+    @apply
+      flex
+      items-center
+      gap-3
+      border-2
+      border-transparent
+      px-4
+      py-2
+      font-mono
+      text-mono-label
+      uppercase
+      text-on-surface-variant
+      transition-all;
+  }
+
+  .dashboard-nav-item:hover {
+    @apply
+      border-on-background
+      bg-surface-container
+      shadow-neo-sm;
+
+    transform: translate(-2px, -2px);
+  }
+
+  .dashboard-nav-item-active {
+    @apply
+      border-on-background
+      bg-primary-container
+      text-on-primary-container
+      shadow-neo-sm;
+  }
+
+  .dashboard-sidebar-section {
+    @apply
+      border-t
+      border-grid-line
+      p-4;
+  }
+
+  .dashboard-logout {
+    @apply
+      flex
+      w-full
+      items-center
+      justify-center
+      gap-2
+      border
+      border-on-background
+      bg-surface
+      py-2
+      font-mono
+      text-mono-label
+      uppercase
+      text-status-red
+      transition-all;
+  }
+
+  .dashboard-logout:hover {
+    @apply
+      bg-surface-container;
+  }
+
+  .dashboard-help {
+    @apply
+      flex
+      items-center
+      gap-3
+      px-4
+      py-2
+      font-mono
+      text-mono-label
+      uppercase
+      text-on-surface-variant
+      transition-all;
+  }
+
+  .dashboard-help:hover {
+    @apply
+      bg-surface-container;
+  }
+
+
+  /* ---------------------------------------------------------
+     Dashboard Topbar
+     --------------------------------------------------------- */
+
+  .dashboard-topbar {
+    @apply
+      sticky
+      top-0
+      z-30
+      flex
+      w-full
+      items-center
+      justify-between
+      border-b
+      border-grid-line
+      bg-background
+      px-4
+      py-2
+      shadow-neo;
+  }
+
+  .dashboard-mobile-logo {
+    @apply
+      flex
+      h-8
+      w-8
+      items-center
+      justify-center
+      border
+      border-on-background
+      bg-primary
+      text-lg
+      font-bold
+      text-on-primary
+      shadow-neo-sm
+      md:hidden;
+  }
+
+  .dashboard-search-wrapper {
+    @apply
+      relative
+      hidden
+      w-full
+      max-w-md
+      md:ml-4
+      md:flex;
+  }
+
+  .dashboard-search-icon {
+    @apply
+      pointer-events-none
+      absolute
+      left-3
+      top-1/2
+      -translate-y-1/2
+      text-on-surface-variant;
+  }
+
+  .dashboard-search {
+    @apply
+      w-full
+      rounded-none
+      border
+      border-grid-line
+      bg-surface
+      py-2
+      pl-10
+      pr-4
+      font-body
+      text-body-md
+      outline-none
+
+      focus:border-primary
+      focus:ring-1
+      focus:ring-primary;
+  }
+
+  .dashboard-topbar-actions {
+    @apply
+      ml-auto
+      flex
+      items-center
+      gap-2;
+  }
+
+  .dashboard-icon-button {
+    @apply
+      relative
+      border
+      border-transparent
+      p-2
+      text-on-surface-variant
+      transition-all;
+  }
+
+  .dashboard-icon-button:hover {
+    @apply
+      border-on-background
+      bg-surface-container-low;
+  }
+
+  .notification-badge {
+    @apply
+      absolute
+      -right-1
+      -top-1
+      flex
+      h-4
+      w-4
+      items-center
+      justify-center
+      border
+      border-on-background
+      bg-status-red
+      text-[10px]
+      text-white;
+  }
+
+
+  /* ---------------------------------------------------------
+     Dashboard Page Header
+     --------------------------------------------------------- */
+
+  .dashboard-page-header {
+    @apply
+      mb-8
+      flex
+      flex-col
+      justify-between
+      gap-4
+      border-b-2
+      border-on-background
+      pb-4
+      md:flex-row
+      md:items-end;
+  }
+
+  .dashboard-breadcrumb {
+    @apply
+      mb-2
+      flex
+      items-center
+      gap-2
+      font-mono
+      text-mono-tiny
+      uppercase
+      text-muted-slate;
+  }
+
+  .dashboard-page-title {
+    @apply
+      font-display
+      text-headline-lg
+      font-bold
+      tracking-tight
+      text-on-background;
+  }
+
+  .dashboard-page-subtitle {
+    @apply
+      mt-2
+      font-mono
+      text-mono-label
+      uppercase
+      text-muted-slate;
+  }
+
+  .dashboard-view-toggle {
+    @apply
+      flex
+      gap-2;
+  }
+
+  .dashboard-view-button {
+    @apply
+      flex
+      items-center
+      justify-center
+      border
+      border-on-background
+      bg-surface
+      p-2
+      text-on-surface
+      transition-colors;
+  }
+
+  .dashboard-view-button-active {
+    @apply
+      bg-primary
+      text-on-primary
+      shadow-neo;
+  }
+
+
+  /* ---------------------------------------------------------
+     Hub Grid
+     --------------------------------------------------------- */
+
+  .hub-grid {
+    @apply
+      grid
+      grid-cols-1
+      gap-6
+      md:grid-cols-2
+      lg:grid-cols-3
+      xl:grid-cols-4;
+  }
+
+
+  /* ---------------------------------------------------------
+     Hub Card
+     --------------------------------------------------------- */
+
+  .hub-card {
+    @apply
+      flex
+      h-full
+      flex-col
+      border
+      border-on-background
+      bg-surface
+      shadow-neo
+      transition-colors;
+  }
+
+  .hub-card:hover {
+    @apply
+      bg-surface-container-low;
+  }
+
+  .hub-card-header {
+    @apply
+      flex
+      items-start
+      justify-between
+      border-b
+      border-grid-line
+      p-5;
+  }
+
+  .hub-card-icon {
+    @apply
+      flex
+      h-10
+      w-10
+      items-center
+      justify-center
+      border
+      border-on-background;
+  }
+
+  .hub-status {
+    @apply
+      border
+      border-on-background
+      px-2
+      py-1
+      font-mono
+      text-mono-tiny
+      uppercase;
+  }
+
+  .hub-status-active {
+    @apply
+      bg-slate-100
+      text-primary;
+  }
+
+  .hub-status-archived {
+    @apply
+      bg-surface-variant
+      text-on-surface-variant;
+  }
+
+  .hub-card-body {
+    @apply
+      flex
+      flex-1
+      flex-col
+      p-5;
+  }
+
+  .hub-card-title {
+    @apply
+      mb-2
+      font-display
+      text-headline-sm
+      font-bold
+      text-on-background;
+  }
+
+  .hub-card-description {
+    @apply
+      line-clamp-2
+      flex-1
+      font-body
+      text-body-md
+      text-on-surface-variant;
+  }
+
+  .hub-card-meta {
+    @apply
+      mt-4
+      border-t
+      border-grid-line
+      pt-4
+      font-mono
+      text-mono-tiny
+      uppercase
+      text-muted-slate;
+  }
+
+  .hub-card-meta > div {
+    @apply
+      flex
+      items-center
+      gap-1;
+  }
+
+  .hub-card-footer {
+    @apply
+      border-t
+      border-grid-line
+      bg-background-light
+      p-4;
+  }
+
+  .hub-card-action {
+    @apply
+      flex
+      w-full
+      items-center
+      justify-center
+      gap-2
+      border
+      border-on-background
+      bg-surface
+      py-2
+      font-mono
+      text-mono-label
+      uppercase
+      text-primary
+      shadow-neo
+      transition-all;
+  }
+
+  .hub-card-action:hover {
+    @apply
+      shadow-neo-sm;
+
+    transform: translate(2px, 2px);
+  }
+
+  .hub-card-action:active {
+    @apply
+      shadow-none;
+
+    transform: translate(4px, 4px);
+  }
+
+  .hub-card-action-archived {
+    @apply
+      text-on-surface-variant
+      opacity-80;
+  }
+
+
+  /* ---------------------------------------------------------
+     Create Hub
+     --------------------------------------------------------- */
+
+  .create-hub-card {
+    @apply
+      flex
+      min-h-[300px]
+      cursor-pointer
+      flex-col
+      items-center
+      justify-center
+      border
+      border-dashed
+      border-on-background
+      bg-surface-container
+      p-8
+      transition-colors;
+  }
+
+  .create-hub-card:hover {
+    @apply
+      bg-surface-container-high;
+  }
+
+  .create-hub-icon {
+    @apply
+      mb-4
+      flex
+      h-16
+      w-16
+      items-center
+      justify-center
+      rounded-full
+      border
+      border-on-background
+      bg-surface
+      text-primary
+      shadow-neo;
+  }
+
+  .create-hub-title {
+    @apply
+      text-center
+      font-display
+      text-headline-sm
+      font-bold
+      text-on-background;
+  }
+
+  .create-hub-subtitle {
+    @apply
+      mt-2
+      text-center
+      font-mono
+      text-mono-tiny
+      uppercase
+      text-muted-slate;
+  }
 
 }

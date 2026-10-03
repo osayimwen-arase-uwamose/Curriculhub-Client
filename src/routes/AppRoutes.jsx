@@ -4,12 +4,14 @@ import {
   Routes,
 } from "react-router-dom";
 
+import ProtectedRoute from "./ProtectedRoute.jsx";
+import PublicRoute from "./PublicRoute.jsx";
+
 import LandingPage from "../pages/LandingPage.jsx";
 import LoginPage from "../pages/LoginPage.jsx";
 import RegisterPage from "../pages/RegisterPage.jsx";
-
-import ProtectedRoute from "./ProtectedRoute.jsx";
-import PublicRoute from "./PublicRoute.jsx";
+import DashboardPage from "../pages/DashboardPage.jsx";
+import CreateHubPage from "../pages/CreateHubPage.jsx";
 
 const AppRoutes = () => {
   return (
@@ -36,14 +38,25 @@ const AppRoutes = () => {
 
       {/* Protected application */}
       <Route element={<ProtectedRoute />}>
+          {/* DASHBOARD */}
         <Route
           path="/dashboard"
           element={
-            <div className="p-10">
-              Dashboard placeholder
-            </div>
+            <DashboardPage />
           }
         />
+
+        <Route 
+          path="/dashboard/create-hub"
+          element={<CreateHubPage />}
+        />
+
+
+          {/* HUB ROUTES */}
+        {/* <Route 
+          path="/hubs/:hubId"
+          element={}
+        /> */}
 
         {/* Future protected routes */}
         {/* /courses */}

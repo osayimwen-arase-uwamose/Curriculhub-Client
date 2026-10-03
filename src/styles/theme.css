@@ -1,48 +1,97 @@
 @theme {
 
-  /* COLORS */
+  /* =========================================================
+     COLORS
+     ========================================================= */
 
   --color-primary: #005c55;
   --color-primary-light: #0f766e;
 
+  --color-primary-container: #b2f1e8;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #00201d;
+
   --color-secondary: #565e74;
+  --color-secondary-container: #dce2f9;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #131a2b;
+
+  --color-tertiary: #745b00;
+  --color-tertiary-container: #ffe18b;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #241a00;
 
   --color-accent: #F59E0B;
+  --color-accent-amber: #F59E0B;
 
   --color-background: #F8FAFC;
+  --color-background-light: #F1F4F3;
 
   --color-surface: #FFFFFF;
-
-  --color-surface-muted: #F1F4F3;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container-low: #F8FAFC;
+  --color-surface-container: #F1F4F3;
+  --color-surface-container-high: #E9EEEC;
+  --color-surface-variant: #E2E8F0;
 
   --color-border: #CBD5E1;
+  --color-grid-line: #CBD5E1;
 
-  /* TEXT */
+  /* =========================================================
+     TEXT
+     ========================================================= */
 
   --color-text: #181C1C;
-
   --color-text-muted: #64748B;
 
-  /* FONTS */
+  --color-on-background: #181C1C;
+  --color-on-surface: #181C1C;
+  --color-on-surface-variant: #475569;
+
+  --color-muted-slate: #64748B;
+
+  /* =========================================================
+     STATUS
+     ========================================================= */
+
+  --color-status-red: #DC2626;
+  --color-error: #DC2626;
+
+  /* =========================================================
+     TYPOGRAPHY
+     ========================================================= */
 
   --font-display: "Space Grotesk", sans-serif;
-
   --font-body: "DM Sans", sans-serif;
-
   --font-mono: "JetBrains Mono", monospace;
 
-  /* SHADOWS */
+  /*
+   * Semantic font sizes
+   */
 
-  --shadow-neo: 4px 4px 0px rgba(15,23,42,1);
+  --text-display-xl: 3.5rem;
+  --text-headline-lg: 2.5rem;
+  --text-headline-sm: 1.5rem;
 
-  --shadow-neo-sm: 2px 2px 0px rgba(15,23,42,1);
+  --text-body-lg: 1.125rem;
+  --text-body-md: 1rem;
 
-  /* LAYOUT */
+  --text-mono-label: 0.8125rem;
+  --text-mono-tiny: 0.6875rem;
+
+  /* =========================================================
+     SHADOWS
+     ========================================================= */
+
+  --shadow-neo: 4px 4px 0px rgba(15, 23, 42, 1);
+  --shadow-neo-sm: 2px 2px 0px rgba(15, 23, 42, 1);
+
+  /* =========================================================
+     LAYOUT
+     ========================================================= */
 
   --spacing-page: 2rem;
-
   --spacing-section: 6rem;
 
   --radius-card: 0px;
-
 }
